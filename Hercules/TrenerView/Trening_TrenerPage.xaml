@@ -1,0 +1,52 @@
+﻿<Page x:Class="Hercules.TrenerView.Trening_TrenerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hercules.TrenerView"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="Trening_TrenerPage">
+
+    <Grid Margin="0,0,-337,-176">
+        <TabControl Loaded="TabControl_Loaded">
+            <TabItem Header="Dodaj trening">
+                <Grid>
+                    <Label Content="Trener:" HorizontalAlignment="Left" Margin="7,10,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="trenerTreningCB" HorizontalAlignment="Left" Margin="141,14,0,0" VerticalAlignment="Top" Width="120" Loaded="ComboBox_Loaded"/>
+                    <Label Content="Pesel klienta:" HorizontalAlignment="Left" Margin="7,50,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="peselKlientaTB" HorizontalAlignment="Left" Height="23" Margin="141,53,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Rozpoczęcie treningu:" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Zakończenie treningu:" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Należność: " HorizontalAlignment="Left" Margin="15,180,0,0" VerticalAlignment="Top"/>
+                    <DatePicker x:Name="rozpoczecieDP" HorizontalAlignment="Left" Margin="141,87,0,0" VerticalAlignment="Top"/>
+                    <DatePicker x:Name="zakonczenieDP" HorizontalAlignment="Left" Margin="141,118,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="naleznoscTB" HorizontalAlignment="Left" Height="23" Margin="141,180,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <Button Content="Dodaj" HorizontalAlignment="Left" Margin="141,235,0,0" VerticalAlignment="Top" Width="120" Height="40" Click="Button_Click"/>
+
+                    <CheckBox x:Name="czyZakonczonyCHB" Content="Czy zakończony?" HorizontalAlignment="Left" Margin="141,153,0,0" VerticalAlignment="Top"/>
+
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Wyszukaj trening">
+                <Grid>
+                    <Label Content="Trener" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="trenerTreningSzukajCB" HorizontalAlignment="Left" Margin="58,14,0,0" VerticalAlignment="Top" Width="120" Loaded="ComboBox_Loaded_1"/>
+                    <Label Content="Data: " HorizontalAlignment="Left" Margin="266,14,0,0" VerticalAlignment="Top"/>
+                    <DatePicker x:Name="dataTreningDP" HorizontalAlignment="Left" Margin="317,16,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+                    <Button x:Name="szukajBTN" Content="Szukaj" HorizontalAlignment="Left" Margin="457,17,0,0" VerticalAlignment="Top" Width="90" Height="23" Click="szukajBTN_Click"/>
+                    <DataGrid x:Name="TreningDG" HorizontalAlignment="Left" Height="373" Margin="10,65,0,0" VerticalAlignment="Top" Width="611"/>
+                    <CheckBox x:Name="dniaCHB" Content="Trening Dnia" HorizontalAlignment="Left" Margin="272,45,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked"/>
+
+                </Grid>
+
+            </TabItem>
+
+
+
+
+        </TabControl>
+
+    </Grid>
+</Page>
