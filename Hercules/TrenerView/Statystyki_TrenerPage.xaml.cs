@@ -24,5 +24,25 @@ namespace Hercules.TrenerView
         {
             InitializeComponent();
         }
+
+        private void ComboBox_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PobierzMiesiacBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PobierzRokBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ComboBox_Loaded_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

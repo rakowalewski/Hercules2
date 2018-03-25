@@ -100,3 +100,15 @@ E:\Rafał\Programowanie\Hercules_v2\Hercules\obj\Debug\Hercules.csproj.GenerateR
 E:\Rafał\Programowanie\Hercules_v2\Hercules\obj\Debug\Hercules.csproj.CoreCompileInputs.cache
 E:\Rafał\Programowanie\Hercules_v2\Hercules\obj\Debug\Hercules.exe
 E:\Rafał\Programowanie\Hercules_v2\Hercules\obj\Debug\Hercules.pdb
+E:\Rafał\Programowanie\Hercules_v2\Hercules\obj\Debug\RecepcjaView\Klient_RecepcjaPage.baml
+E:\Rafał\Programowanie\Hercules_v2\Hercules\obj\Debug\RecepcjaView\Harmonogram_RecepcjaPage.g.cs
+E:\Rafał\Programowanie\Hercules_v2\Hercules\obj\Debug\RecepcjaView\Klient_RecepcjaPage.g.cs
+E:\Rafał\Programowanie\Hercules_v2\Hercules\obj\Debug\RecepcjaView\Ustawienia_RecepcjaPage.g.cs
+E:\Rafał\Programowanie\Hercules_v2\Hercules\obj\Debug\TrenerView\Harmonogram_TrenerPage.g.cs
+E:\Rafał\Programowanie\Hercules_v2\Hercules\obj\Debug\TrenerView\Statystyki_TrenerPage.g.cs
+E:\Rafał\Programowanie\Hercules_v2\Hercules\obj\Debug\TrenerView\Ustawienia_TrenerPage.g.cs
+E:\Rafał\Programowanie\Hercules_v2\Hercules\obj\Debug\RecepcjaView\Harmonogram_RecepcjaPage.baml
+E:\Rafał\Programowanie\Hercules_v2\Hercules\obj\Debug\RecepcjaView\Ustawienia_RecepcjaPage.baml
+E:\Rafał\Programowanie\Hercules_v2\Hercules\obj\Debug\TrenerView\Harmonogram_TrenerPage.baml
+E:\Rafał\Programowanie\Hercules_v2\Hercules\obj\Debug\TrenerView\Statystyki_TrenerPage.baml
+E:\Rafał\Programowanie\Hercules_v2\Hercules\obj\Debug\TrenerView\Ustawienia_TrenerPage.baml
