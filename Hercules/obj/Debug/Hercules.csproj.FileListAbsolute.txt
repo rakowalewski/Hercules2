@@ -112,3 +112,4 @@ E:\Rafał\Programowanie\Hercules_v2\Hercules\obj\Debug\RecepcjaView\Ustawienia_R
 E:\Rafał\Programowanie\Hercules_v2\Hercules\obj\Debug\TrenerView\Harmonogram_TrenerPage.baml
 E:\Rafał\Programowanie\Hercules_v2\Hercules\obj\Debug\TrenerView\Statystyki_TrenerPage.baml
 E:\Rafał\Programowanie\Hercules_v2\Hercules\obj\Debug\TrenerView\Ustawienia_TrenerPage.baml
+E:\Rafał\Programowanie\Hercules_v2\Hercules\bin\Debug\ClassLibrary.dll.config

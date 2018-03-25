@@ -10,3 +10,4 @@ E:\Rafał\Programowanie\Hercules_v2\ClassLibrary\obj\Debug\ClassLibrary.csprojRe
 E:\Rafał\Programowanie\Hercules_v2\ClassLibrary\obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache
 E:\Rafał\Programowanie\Hercules_v2\ClassLibrary\obj\Debug\ClassLibrary.dll
 E:\Rafał\Programowanie\Hercules_v2\ClassLibrary\obj\Debug\ClassLibrary.pdb
+E:\Rafał\Programowanie\Hercules_v2\ClassLibrary\bin\Debug\ClassLibrary.dll.config

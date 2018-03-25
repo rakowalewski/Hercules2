@@ -51,10 +51,10 @@ namespace Hercules.TrenerView
                     con.Close();
                 }
             }
-            catch (Exception)
+            catch (Exception b)
             {
 
-                throw;
+                MessageBox.Show(b.ToString());
             }
         }
 
@@ -66,10 +66,10 @@ namespace Hercules.TrenerView
                 BazaDAO baza = new BazaDAO();
                 HarmonogramDG.ItemsSource = metody.Pobierz_Harmonogram(trenerHarmonogramCB.Text);
             }
-            catch (Exception)
+            catch (Exception a)
             {
 
-                throw;
+                MessageBox.Show(a.ToString());
             }
         }
     }
