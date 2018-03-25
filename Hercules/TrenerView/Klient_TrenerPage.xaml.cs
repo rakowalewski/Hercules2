@@ -171,5 +171,21 @@ namespace Hercules
                 throw;
             }
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            BazaDAO baza = new BazaDAO();
+            Wywiad wywiad = new Wywiad();
+            Metody metody = new Metody();
+            metody.Pobierz_Wywiad(peselWywiadSzukajTB.Text);
+            wadaSercaWywiadRB.IsChecked = wywiad.WadaSerca;
+            nadcisnienieWywiadRB.IsChecked = wywiad.Nadcisnienie;
+            zaburzeniaRB.IsChecked = wywiad.ZabRytmSerca;
+            epilepsjaWywiadRB.IsChecked = wywiad.Epilepsja;
+            alergiaWywiadRB.IsChecked = wywiad.Alergia;
+            astmaWywiadRB.IsChecked = wywiad.Astma;
+            cukrzycaWywiadRB.IsChecked = wywiad.Cukrzyca;
+            inneChorobyTB.Text = wywiad.InneChoroby;
+        }
     }
 }

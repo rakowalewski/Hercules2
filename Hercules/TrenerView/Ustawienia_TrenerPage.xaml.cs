@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ClassLibrary;
+using ClassLibrary.Basic;
+using ClassLibrary.DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +23,50 @@ namespace Hercules.TrenerView
     /// </summary>
     public partial class Ustawienia_TrenerPage : Page
     {
+        Trener trener = new Trener();
+        Metody metody = new Metody();
+
         public Ustawienia_TrenerPage()
         {
             InitializeComponent();
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                BazaDAO baza = new BazaDAO();
+
+                trener = metody.Pobierz_Trener_Login(ObecnyUzytkownik.Default.Login);
+                imieTB.Text = trener.Imie;
+                nazwiskoTB.Text = trener.Nazwisko;
+                loginTB.Text = trener.Login;
+                hasloTB.Text = trener.Haslo;
+
+            }
+            catch (Exception a)
+            {
+
+                MessageBox.Show(a.ToString());
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                BazaDAO baza = new BazaDAO();
+                trener.Imie = imieTB.Text;
+                trener.Nazwisko = nazwiskoTB.Text;
+                trener.Login = loginTB.Text;
+                trener.Haslo = hasloTB.Text;
+                metody.Modyfikuj_Trener(trener, trener.IdTrener);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

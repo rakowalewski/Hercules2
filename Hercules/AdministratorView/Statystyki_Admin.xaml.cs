@@ -89,5 +89,12 @@ namespace Hercules
         {
 
         }
+
+        private void PobierzRokBTN_Click(object sender, RoutedEventArgs e)
+        {
+            BazaDAO baza = new BazaDAO();
+            Metody metody = new Metody();
+            ZarobkiRokTB.Text = metody.Raport_Roczny(RokRokTB.Text, TrenerCB.Text).ToString();
+        }
     }
 }

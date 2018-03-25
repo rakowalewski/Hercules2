@@ -20,7 +20,7 @@
                     <Label Content="Rok: " HorizontalAlignment="Left" Margin="173,176,0,0" VerticalAlignment="Top" Grid.Column="2"/>
                     <TextBox x:Name="RokRokTB" HorizontalAlignment="Left" Height="23" Margin="214,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
                     <Button x:Name="PobierzMiesiacBTN" Content="Pobierz" HorizontalAlignment="Left" Margin="385,90,0,0" VerticalAlignment="Top" Width="87" Height="23" Grid.Column="2" Click="PobierzMiesiacBTN_Click"/>
-                    <Button x:Name="PobierzRokBTN" Content="Pobierz" HorizontalAlignment="Left" Margin="385,176,0,0" VerticalAlignment="Top" Width="87" Height="23" Grid.Column="2"/>
+                    <Button x:Name="PobierzRokBTN" Content="Pobierz" HorizontalAlignment="Left" Margin="385,176,0,0" VerticalAlignment="Top" Width="87" Height="23" Grid.Column="2" Click="PobierzRokBTN_Click"/>
                     <Label Content="Zarobki: " HorizontalAlignment="Left" Margin="543,90,0,0" VerticalAlignment="Top" Grid.Column="2"/>
                     <Label Content="Zarobki: " HorizontalAlignment="Left" Margin="543,173,0,0" VerticalAlignment="Top" Grid.Column="2"/>
                     <TextBox x:Name="ZarobkiMiesiacTB" HorizontalAlignment="Left" Height="23" Margin="604,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>

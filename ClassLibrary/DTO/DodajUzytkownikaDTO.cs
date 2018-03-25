@@ -38,18 +38,18 @@ namespace ClassLibrary.DTO
             dodajUzytkownikaDAO.Dodaj_Recepcja(recepcja);
         }
 
-        public void Modyfikuj_Administrator(Administrator administrator, string StaryLogin)
+        public void Modyfikuj_Administrator(Administrator administrator, int IdPracownik)
         {
-            dodajUzytkownikaDAO.Modyfikuj_Administrator(administrator, StaryLogin);
+            dodajUzytkownikaDAO.Modyfikuj_Administrator(administrator, IdPracownik);
         }
-        public void Modyfikuj_Trener(Trener trener, string StaryLogin)
+        public void Modyfikuj_Trener(Trener trener, int IdPracownik)
         {
-            dodajUzytkownikaDAO.Modyfikuj_Trener(trener, StaryLogin);
+            dodajUzytkownikaDAO.Modyfikuj_Trener(trener, IdPracownik);
         }
 
-        public void Modyfikuj_Recepcja(Recepcja recepcja, string StaryLogin)
+        public void Modyfikuj_Recepcja(Recepcja recepcja, int IdPracownik)
         {
-            dodajUzytkownikaDAO.Modyfikuj_Recepcja(recepcja, StaryLogin);
+            dodajUzytkownikaDAO.Modyfikuj_Recepcja(recepcja, IdPracownik);
         }
     }
 

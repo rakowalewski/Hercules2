@@ -12,9 +12,9 @@ namespace ClassLibrary
         void Dodaj_Administratora(Administrator administrator);
         void Dodaj_Recepcja(Recepcja recepcja);
         void Dodaj_Trener(Trener trener);
-        void Modyfikuj_Administrator(Administrator administrator, string StaryLogin);
-        void Modyfikuj_Recepcja(Recepcja recepcja, string StaryLogin);
-        void Modyfikuj_Trener(Trener trener, string StaryLogin);
+        void Modyfikuj_Administrator(Administrator administrator, int IdPracownik);
+        void Modyfikuj_Recepcja(Recepcja recepcja, int IdPracownik);
+        void Modyfikuj_Trener(Trener trener, int IdPracownik);
         void Dodaj_Klienta(Klient klient, string LoginTrenera);
         void Modyfikuj_Klienta(Klient klient, string StaryPesel);
         List<Klient> Wyszukaj_Klienta(string Pesel);

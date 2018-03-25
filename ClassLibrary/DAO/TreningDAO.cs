@@ -112,10 +112,12 @@ namespace ClassLibrary.DAO
         public double Raport_Roczny(string Rok, string LoginTrenera)
         {
             BazaDAO baza = new BazaDAO();
+            var datapoczatkowa = $"{ Rok}'-01-01'";
+            var datakoncowa = $"{ Rok}'-12-31'";
             string query = "select sum(t.Kwota) from Trening as t join Trener as tr on t.IdTrener = tr.IdTrener where (t.DataGodzZak between @datapoczatkowa and @datakoncowa ) and tr.Login = @login";
             SqlCommand cmd = new SqlCommand(query, con);
-            cmd.Parameters.Add(new SqlParameter("@datapoczatkowa", Rok));
-           
+            cmd.Parameters.Add(new SqlParameter("@datapoczatkowa", datapoczatkowa));
+            cmd.Parameters.Add(new SqlParameter("@datakoncowa", datakoncowa));
             cmd.Parameters.Add(new SqlParameter("@login", LoginTrenera));
             sqlReader = cmd.ExecuteReader();
             var suma = sqlReader["Suma"].ToString();

@@ -50,16 +50,17 @@ namespace ClassLibrary.DAO
             con.Close();
         }
 
-        public void Modyfikuj_Administrator(Administrator administrator, string StaryLogin)
+        public void Modyfikuj_Administrator(Administrator administrator, int IdPracownik)
         {
             BazaDAO baza = new BazaDAO();
-            string query = "Update Administrator set Imie='" + administrator.Imie + "', Nazwisko='" + administrator.Nazwisko + "', Login='" + administrator.Login + "', Hasło='" + administrator.Haslo + "'";
+            //string query = "Update Administrator set Imie='" + administrator.Imie + "', Nazwisko='" + administrator.Nazwisko + "', Login='" + administrator.Login + "', Hasło='" + administrator.Haslo + "'";
+            string query = $"Update Administrator set Imie='{administrator.Imie}', Nazwisko='{administrator.Nazwisko}', Login='{administrator.Login}', Hasło='{administrator.Haslo} where IdAdministrator={IdPracownik} ";
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.ExecuteNonQuery();
             con.Close();
         }
 
-        public void Modyfikuj_Trener(Trener trener, string StaryLogin)
+        public void Modyfikuj_Trener(Trener trener, int IdPracownik)
         {
             BazaDAO baza = new BazaDAO();
             string query = "Update Trener set Imie='" + trener.Imie + "', Nazwisko='" + trener.Nazwisko + "', Login='" + trener.Login + "', Hasło='" + trener.Haslo + "'";
@@ -68,7 +69,7 @@ namespace ClassLibrary.DAO
             con.Close();
         }
 
-        public void Modyfikuj_Recepcja(Recepcja recepcja, string StaryLogin)
+        public void Modyfikuj_Recepcja(Recepcja recepcja, int IdPracownik)
         {
             BazaDAO baza = new BazaDAO();
             string query = "Update Recepcja set Imie='" + recepcja.Imie + "', Nazwisko='" + recepcja.Nazwisko + "', Login='" + recepcja.Login + "', Hasło='" + recepcja.Haslo + "'";

@@ -79,17 +79,17 @@
                 <TabItem Header="Znajdź wywiad zdrowotny">
                     <Grid>
                         <Label Content="Inne choroby" HorizontalAlignment="Left" Margin="10,257,0,0" VerticalAlignment="Top"/>
-                        <RadioButton Content="Wada Serca" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top"/>
-                        <RadioButton Content="Nadciśnienie" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top"/>
-                        <RadioButton Content="Zaburzenia rytmu serca" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top"/>
-                        <RadioButton Content="Epilepsja" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top"/>
-                        <RadioButton Content="Alergia" HorizontalAlignment="Left" Margin="10,169,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.509,0.444"/>
-                        <RadioButton Content="Astma" HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top"/>
-                        <RadioButton Content="Cukrzyca" HorizontalAlignment="Left" Margin="10,228,0,0" VerticalAlignment="Top"/>
+                        <RadioButton Name="wadaSercaWywiadRB" Content="Wada Serca" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top"/>
+                        <RadioButton Name="nadcisnienieWywiadRB" Content="Nadciśnienie" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top"/>
+                        <RadioButton Name="zaburzeniaRB" Content="Zaburzenia rytmu serca" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top"/>
+                        <RadioButton Name="epilepsjaWywiadRB" Content="Epilepsja" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top"/>
+                        <RadioButton Name="alergiaWywiadRB" Content="Alergia" HorizontalAlignment="Left" Margin="10,169,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.509,0.444"/>
+                        <RadioButton Name="astmaWywiadRB" Content="Astma" HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top"/>
+                        <RadioButton Name="cukrzycaWywiadRB" Content="Cukrzyca" HorizontalAlignment="Left" Margin="10,228,0,0" VerticalAlignment="Top"/>
                         <TextBox HorizontalAlignment="Left" Height="23" Margin="90,21,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="143"/>
                         <Label Content="Pesel Klienta: " HorizontalAlignment="Left" Margin="8,18,0,0" VerticalAlignment="Top"/>
-                        <TextBox HorizontalAlignment="Left" Height="23" Margin="95,261,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="227"/>
-                        <Button Content="Szukaj" HorizontalAlignment="Left" Margin="288,21,0,0" VerticalAlignment="Top" Width="91" Height="23"/>
+                        <TextBox Name="peselWywiadSzukajTB" HorizontalAlignment="Left" Height="23" Margin="95,261,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="227"/>
+                        <Button Content="Szukaj" HorizontalAlignment="Left" Margin="288,21,0,0" VerticalAlignment="Top" Width="91" Height="23" Click="Button_Click_1"/>
                     </Grid>
                 </TabItem>
 

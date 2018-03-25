@@ -44,7 +44,7 @@ namespace Hercules
             //Podłączenie do bazy danych
             LogowanieDAO logowanie = new LogowanieDAO();
             var i = logowanie.LogowanieAdministrator(tbxLogin.Text, pbPassword.Password.ToString(), cboxPermissions.Text);
-
+            ObecnyUzytkownik.Default.Login = tbxLogin.Text;
 
             #region First_version
             //try

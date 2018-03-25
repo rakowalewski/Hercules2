@@ -73,6 +73,11 @@
     <Compile Include="AdministratorView\Konta_AdminPage.xaml.cs">
       <DependentUpon>Konta_AdminPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ObecnyUzytkownik.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>ObecnyUzytkownik.settings</DependentUpon>
+    </Compile>
     <Compile Include="RecepcjaView\Harmonogram_RecepcjaPage.xaml.cs">
       <DependentUpon>Harmonogram_RecepcjaPage.xaml</DependentUpon>
     </Compile>
@@ -200,6 +205,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ObecnyUzytkownik.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>ObecnyUzytkownik.Designer.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

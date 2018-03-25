@@ -88,9 +88,9 @@ namespace ClassLibrary
             return logowanieDTO.LogowanieAdministrator(login, haslo, perm);
         }
 
-        public void Modyfikuj_Administrator(Administrator administrator, string StaryLogin)
+        public void Modyfikuj_Administrator(Administrator administrator, int IdPracownik)
         {
-            dodajUzytkownikaDTO.Modyfikuj_Administrator(administrator, StaryLogin);
+            dodajUzytkownikaDTO.Modyfikuj_Administrator(administrator, IdPracownik);
         }
 
         public void Modyfikuj_Klienta(Klient klient, string StaryPesel)
@@ -98,14 +98,14 @@ namespace ClassLibrary
             klienciDTO.Modyfikuj_Klienta(klient, StaryPesel);
         }
 
-        public void Modyfikuj_Recepcja(Recepcja recepcja, string StaryLogin)
+        public void Modyfikuj_Recepcja(Recepcja recepcja, int IdPracownik)
         {
-            dodajUzytkownikaDTO.Modyfikuj_Recepcja(recepcja, StaryLogin);
+            dodajUzytkownikaDTO.Modyfikuj_Recepcja(recepcja, IdPracownik);
         }
 
-        public void Modyfikuj_Trener(Trener trener, string StaryLogin)
+        public void Modyfikuj_Trener(Trener trener, int IdPracownik)
         {
-            dodajUzytkownikaDTO.Modyfikuj_Trener(trener, StaryLogin);
+            dodajUzytkownikaDTO.Modyfikuj_Trener(trener, IdPracownik);
         }
 
         public Administrator Pobierz_Administrator_Login(string Login)
