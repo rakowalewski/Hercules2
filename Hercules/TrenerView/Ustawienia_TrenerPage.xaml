@@ -16,7 +16,7 @@
         <TextBox Name="imieTB" HorizontalAlignment="Left" Height="23" Margin="107,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="nazwiskoTB" HorizontalAlignment="Left" Height="23" Margin="107,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="loginTB" HorizontalAlignment="Left" Height="23" Margin="107,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="hasloTB" HorizontalAlignment="Left" Height="23" Margin="107,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox Name="hasloTB" HorizontalAlignment="Left" Height="23" Margin="107,168,0,0"  VerticalAlignment="Top" Width="120"/>
         <Button Content="Zapisz" HorizontalAlignment="Left" Margin="117,225,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
     </Grid>

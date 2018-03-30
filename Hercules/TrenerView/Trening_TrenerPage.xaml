@@ -13,7 +13,7 @@
             <TabItem Header="Dodaj trening">
                 <Grid>
                     <Label Content="Trener:" HorizontalAlignment="Left" Margin="7,10,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="trenerTreningCB" HorizontalAlignment="Left" Margin="141,14,0,0" VerticalAlignment="Top" Width="120" Loaded="ComboBox_Loaded"/>
+                    <ComboBox x:Name="trenerTreningCB" HorizontalAlignment="Left" Margin="141,14,0,0" VerticalAlignment="Top" Width="120" Loaded="ComboBox_Loaded" SelectionChanged="trenerTreningCBSzukaj_SelectionChanged"/>
                     <Label Content="Pesel klienta:" HorizontalAlignment="Left" Margin="7,50,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="peselKlientaTB" HorizontalAlignment="Left" Height="23" Margin="141,53,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
                     <Label Content="Rozpoczęcie treningu:" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top"/>

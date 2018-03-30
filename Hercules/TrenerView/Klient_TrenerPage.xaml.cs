@@ -77,6 +77,7 @@ namespace Hercules
                 klient.Pesel = tbxPesel.Text;
                 klient.Adres = tbxAdres.Text;
                 klient.Telefon = tbxTelefon.Text;
+                klient.Email = tbxEmail.Text;
                 if (rbKobieta.IsChecked ==true)
                 {
                     klient.Plec = "Kobieta";
@@ -88,10 +89,10 @@ namespace Hercules
                 
                 metody.Dodaj_Klienta(klient, trenerKlientCB.Text);
             }
-            catch (Exception)
+            catch (Exception we)
             {
 
-                throw;
+                MessageBox.Show(we.ToString());
             }
 
         }
@@ -129,11 +130,29 @@ namespace Hercules
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Metody metody = new Metody();
+            string idKlient = "";
+
+            var connectionString = @"Data Source=RAFAL-PC;initial catalog=FITNES;integrated security=True";
+            using (var con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                string query = "Select IdKlient from Klient where Pesel = @pesel";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.Add(new SqlParameter("@pesel", peselWywiadTB.Text));
+                SqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    idKlient = dataReader["idKlient"].ToString();
+
+                }
+                con.Close();
+            }
+
             try
             {
                 BazaDAO baza = new BazaDAO();
                 Wywiad wywiad = new Wywiad();
-                wywiad.Pesel = tbxPesel.Text;
+                wywiad.IdKlient = idKlient;
                 if (wadaSercaRB.IsChecked == true)
                 {
                     wywiad.WadaSerca = true;
@@ -165,19 +184,38 @@ namespace Hercules
                 wywiad.InneChoroby = inneChorobyTB.Text;
                 metody.Zapisz_Wywiad(wywiad);
             }
-            catch (Exception)
+            catch (Exception b)
             {
 
-                throw;
+                MessageBox.Show(b.ToString());
             }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            string idKlient = "";
+
+            var connectionString = @"Data Source=RAFAL-PC;initial catalog=FITNES;integrated security=True";
+            using (var con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                string query = "Select IdKlient from Klient where Pesel = @pesel";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.Add(new SqlParameter("@pesel", peselZnajdzWywiadTB.Text));
+                SqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    idKlient = dataReader["idKlient"].ToString();
+
+                }
+                con.Close();
+            }
             BazaDAO baza = new BazaDAO();
             Wywiad wywiad = new Wywiad();
             Metody metody = new Metody();
-            metody.Pobierz_Wywiad(peselWywiadSzukajTB.Text);
+
+             wywiad = metody.Pobierz_Wywiad(idKlient);
+
             wadaSercaWywiadRB.IsChecked = wywiad.WadaSerca;
             nadcisnienieWywiadRB.IsChecked = wywiad.Nadcisnienie;
             zaburzeniaRB.IsChecked = wywiad.ZabRytmSerca;

@@ -87,7 +87,9 @@ namespace Hercules
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Metody metody = new Metody();
+            BazaDAO baza = new BazaDAO();
+            HistoriaDV.ItemsSource = metody.Pobierz_Trening_Historia(peselKlientHistoriaTB.Text, trenerHistoriaCB.Text);
         }
 
         private void PobierzRokBTN_Click(object sender, RoutedEventArgs e)
@@ -95,6 +97,19 @@ namespace Hercules
             BazaDAO baza = new BazaDAO();
             Metody metody = new Metody();
             ZarobkiRokTB.Text = metody.Raport_Roczny(RokRokTB.Text, TrenerCB.Text).ToString();
+        }
+
+        private void trenerHistoriaCB_Loaded(object sender, RoutedEventArgs e)
+        {
+            trenerHistoriaCB.Items.Clear();
+            Metody metody = new Metody();
+            BazaDAO baza = new BazaDAO();
+            var temp = metody.Pobierz_Wsz_Trenerow().ToList();
+            foreach (var item in temp)
+            {
+                trenerHistoriaCB.Items.Add(item.Login);
+            }
+            
         }
     }
 }

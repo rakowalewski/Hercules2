@@ -16,7 +16,8 @@ namespace ClassLibrary.DAO
             BazaDAO baza = new BazaDAO();
             string query = "Select GodzinaRozpoczecia, GodzinaZakonczenia from Harmonogram as h join Trener as t on h.IdTrener = t.IdTrener where t.Login = @login";
             SqlCommand cmd = new SqlCommand(query, con);
-            cmd.ExecuteNonQuery();
+            cmd.Parameters.Add(new SqlParameter("@login", Login));
+           
             sqlReader = cmd.ExecuteReader();
             while (sqlReader.Read())
             {

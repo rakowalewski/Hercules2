@@ -21,7 +21,7 @@ namespace ClassLibrary
         List<Klient> Pob_Wsz_Klientow(string Pesel, string Nazwisko);
         void Dodaj_Zdjecie(string adresZdjecia, int IdKlient, DateTime dataZrobienia);
         Zdjecie Pobierz_Zdjecie(Zdjecie zdjecie, int IdKlient);
-        Wywiad Pobierz_Wywiad(string Pesel);
+        Wywiad Pobierz_Wywiad(string IdKlient);
         void Zapisz_Wywiad(Wywiad wywiad);
         int LogowanieAdministrator(string login, string haslo, string perm);
         Trener Pobierz_Trener_Login(string Login);

@@ -10,24 +10,26 @@ namespace ClassLibrary.DAO
 {
     public class WywiadDAO: BazaDAO
     {
-        public Wywiad Pobierz_Wywiad(string Pesel)
+        public Wywiad Pobierz_Wywiad(string IdKlient)
         {
             BazaDAO baza = new BazaDAO();
-            string query = "Select * from Wywiad as w join Klient as k on w.IdKlient = k.IdKlient where k.Pesel = @pesel";
-            SqlCommand cmd = new SqlCommand(query, con);
-            cmd.Parameters.Add(new SqlParameter("@pesel", Pesel));
-            sqlReader = cmd.ExecuteReader();
             Wywiad wywiad = new Wywiad();
+            string query = "Select * from Wywiad where IdKlient = @idKlient";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.Add(new SqlParameter("@idKlient", IdKlient));
+            sqlReader = cmd.ExecuteReader();
+            
             while (sqlReader.Read())
             {
                 // bool zmienna = liczba == 1 ? true : false
-                wywiad.WadaSerca = int.Parse(sqlReader["WadaSerca"].ToString()) == 1 ? true : false;
-                wywiad.Nadcisnienie = int.Parse(sqlReader["Nadcisnienie"].ToString()) == 1 ? true : false;
-                wywiad.ZabRytmSerca = int.Parse(sqlReader["ZabRytmSerca"].ToString()) == 1 ? true : false;
-                wywiad.Epilepsja = int.Parse(sqlReader["Epilepsja"].ToString()) == 1 ? true : false;
-                wywiad.Alergia = int.Parse(sqlReader["Alergia"].ToString()) == 1 ? true : false;
-                wywiad.Astma = int.Parse(sqlReader["Astma"].ToString()) == 1 ? true : false;
-                wywiad.Cukrzyca = int.Parse(sqlReader["Cukrzyca"].ToString()) == 1 ? true : false;
+                //var temp = sqlReader["ZabRytmuSerca"].ToString();
+                wywiad.WadaSerca = bool.Parse(sqlReader["WadaSerca"].ToString());
+                wywiad.Nadcisnienie = bool.Parse(sqlReader["Nadcisnienie"].ToString());
+                wywiad.ZabRytmSerca = bool.Parse(sqlReader["ZabRytmuSerca"].ToString());
+                wywiad.Epilepsja = bool.Parse(sqlReader["Epilepsja"].ToString());
+                wywiad.Alergia = bool.Parse(sqlReader["Alergia"].ToString());
+                wywiad.Astma = bool.Parse(sqlReader["Astma"].ToString());
+                wywiad.Cukrzyca = bool.Parse(sqlReader["Cukrzyca"].ToString());
                 wywiad.InneChoroby = sqlReader["InneChoroby"].ToString();
 
 
@@ -42,9 +44,9 @@ namespace ClassLibrary.DAO
         public void Zapisz_Wywiad(Wywiad wywiad)
         {
             BazaDAO baza = new BazaDAO();
-            string query = "Insert into Wywiad(Pesel,WadaSerca,Nadcisnienie,ZabRytmuSerca,Epilepsja,Alergia,Astma,Cukrzyca,InneChoroby) values(@Pesel, @WadaSerca, @Nadcisnienie, @ZabRytmuSerca, @Epilepsja, @Alergia, @Astma, @Cukrzyca, @InneChoroby)";
+            string query = "Insert into Wywiad(IdKlient,WadaSerca,Nadcisnienie,ZabRytmuSerca,Epilepsja,Alergia,Astma,Cukrzyca,InneChoroby) values(@idklient, @WadaSerca, @Nadcisnienie, @ZabRytmuSerca, @Epilepsja, @Alergia, @Astma, @Cukrzyca, @InneChoroby)";
             SqlCommand cmd = new SqlCommand(query, con);
-            cmd.Parameters.Add(new SqlParameter("@Pesel", wywiad.Pesel));
+            cmd.Parameters.Add(new SqlParameter("@idklient", wywiad.IdKlient));
             cmd.Parameters.Add(new SqlParameter("@WadaSerca", wywiad.WadaSerca));
             cmd.Parameters.Add(new SqlParameter("@Nadcisnienie", wywiad.Nadcisnienie));
             cmd.Parameters.Add(new SqlParameter("@ZabRytmuSerca", wywiad.ZabRytmSerca));

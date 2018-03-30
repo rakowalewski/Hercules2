@@ -56,6 +56,13 @@ namespace ClassLibrary.DAO
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.Parameters.Add(new SqlParameter("@login", Login));
             sqlReader = cmd.ExecuteReader();
+            while(sqlReader.Read())
+            {
+                trener.Imie = sqlReader["Imie"].ToString();
+                trener.Nazwisko = sqlReader["Nazwisko"].ToString();
+                trener.Login = sqlReader["Login"].ToString();
+                trener.Haslo = sqlReader["Haslo"].ToString();
+            }
            
             return trener;
         }
@@ -87,16 +94,19 @@ namespace ClassLibrary.DAO
             BazaDAO baza = new BazaDAO();
             string query = "Select * from Administrator ";
             SqlCommand cmd = new SqlCommand(query, con);
-            cmd.ExecuteNonQuery();
-            //sqlReader = cmd.ExecuteReader();
-            //while (sqlReader.Read())
-            //{
-            //    Administrator admin = new Administrator();
-            //    //admin.Imie = sqlReader["Imie"].ToString();
-            //    //admin.Nazwisko = sqlReader["Nazwisko"].ToString();
-            //    admin.Login = sqlReader["Login"].ToString();
-            //    adminList.Add(admin);
-            //}
+            
+            sqlReader = cmd.ExecuteReader();
+            while (sqlReader.Read())
+            {
+                Administrator admin = new Administrator();
+                admin.IdAdministrator = Int32.Parse(sqlReader["IdAdministrator"].ToString());
+                admin.IdPrzywileje = Int32.Parse(sqlReader["IdPrzywileje"].ToString());
+                admin.Imie = sqlReader["Imie"].ToString();
+                admin.Nazwisko = sqlReader["Nazwisko"].ToString();
+                admin.Login = sqlReader["Login"].ToString();
+                admin.Haslo = sqlReader["Haslo"].ToString();
+                adminList.Add(admin);
+            }
             con.Close();
             return adminList;
             
@@ -107,16 +117,19 @@ namespace ClassLibrary.DAO
             BazaDAO baza = new BazaDAO();
             string query = "Select * from Trener ";
             SqlCommand cmd = new SqlCommand(query, con);
-            cmd.ExecuteNonQuery();
-            //sqlReader = cmd.ExecuteReader();
-            //while (sqlReader.Read())
-            //{
-            //    Trener trener = new Trener();
-            //    trener.Imie = sqlReader["Imie"].ToString();
-            //    trener.Nazwisko = sqlReader["Nazwisko"].ToString();
-            //    trener.Login = sqlReader["Login"].ToString();
-            //    trenerList.Add(trener);
-            //}
+            
+            sqlReader = cmd.ExecuteReader();
+            while (sqlReader.Read())
+            {
+                Trener trener = new Trener();
+                trener.IdTrener = Int32.Parse(sqlReader["IdTrener"].ToString());
+                trener.IdPrzywileje = Int32.Parse(sqlReader["IdPrzywileje"].ToString());
+                trener.Imie = sqlReader["Imie"].ToString();
+                trener.Nazwisko = sqlReader["Nazwisko"].ToString();
+                trener.Login = sqlReader["Login"].ToString();
+                trener.Haslo = sqlReader["Haslo"].ToString();
+                trenerList.Add(trener);
+            }
             con.Close();
             return trenerList;
         }
@@ -126,16 +139,19 @@ namespace ClassLibrary.DAO
             BazaDAO baza = new BazaDAO();
             string query = "Select * from Recepcja ";
             SqlCommand cmd = new SqlCommand(query, con);
-            cmd.ExecuteNonQuery();
-            //sqlReader = cmd.ExecuteReader();
-            //while (sqlReader.Read())
-            //{
-            //    Recepcja recepcja = new Recepcja();
-            //    recepcja.Imie = sqlReader["Imie"].ToString();
-            //    recepcja.Nazwisko = sqlReader["Nazwisko"].ToString();
-            //    recepcja.Login = sqlReader["Login"].ToString();
-            //    recepcjaList.Add(recepcja);
-            //}
+
+            sqlReader = cmd.ExecuteReader();
+            while (sqlReader.Read())
+            {
+                Recepcja recepcja = new Recepcja();
+                recepcja.IdRecepcja = Int32.Parse(sqlReader["IdRecepcja"].ToString());
+                recepcja.IdPrzywileje = Int32.Parse(sqlReader["IdPrzywileje"].ToString());
+                recepcja.Imie = sqlReader["Imie"].ToString();
+                recepcja.Nazwisko = sqlReader["Nazwisko"].ToString();
+                recepcja.Login = sqlReader["Login"].ToString();
+                recepcja.Haslo = sqlReader["Haslo"].ToString();
+                recepcjaList.Add(recepcja);
+            }
             con.Close();
             return recepcjaList;
         }

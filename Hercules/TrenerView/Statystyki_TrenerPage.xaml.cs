@@ -31,6 +31,7 @@ namespace Hercules.TrenerView
 
         private void ComboBox_Loaded(object sender, RoutedEventArgs e)
         {
+            TrenerCB.Items.Clear();
             try
             {
                 var connectionString = @"Data Source=RAFAL-PC;initial catalog=FITNES;integrated security=True";
@@ -65,10 +66,10 @@ namespace Hercules.TrenerView
                 BazaDAO baza = new BazaDAO();
                 ZarobkiMiesiacTB.Text = metody.Raport_Miesieczny(poczatkowaDP.Text, koncowaDP.Text, TrenerCB.Text).ToString();
             }
-            catch (Exception)
+            catch (Exception ae)
             {
 
-                throw;
+                MessageBox.Show(ae.ToString());
             }
         }
 
@@ -81,6 +82,7 @@ namespace Hercules.TrenerView
 
         private void ComboBox_Loaded_1(object sender, RoutedEventArgs e)
         {
+            trenerHistoriaCB.Items.Clear();
             try
             {
                 var connectionString = @"Data Source=RAFAL-PC;initial catalog=FITNES;integrated security=True";
@@ -95,7 +97,7 @@ namespace Hercules.TrenerView
                     sqlDataAdapter.Fill(dt);
                     foreach (DataRow dr in dt.Rows)
                     {
-                        TrenerCB.Items.Add(dr["Login"].ToString());
+                        trenerHistoriaCB.Items.Add(dr["Login"].ToString());
                     }
                     con.Close();
                 }

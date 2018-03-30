@@ -54,7 +54,7 @@ namespace ClassLibrary.DAO
         {
             BazaDAO baza = new BazaDAO();
             //string query = "Update Administrator set Imie='" + administrator.Imie + "', Nazwisko='" + administrator.Nazwisko + "', Login='" + administrator.Login + "', Hasło='" + administrator.Haslo + "'";
-            string query = $"Update Administrator set Imie='{administrator.Imie}', Nazwisko='{administrator.Nazwisko}', Login='{administrator.Login}', Hasło='{administrator.Haslo} where IdAdministrator={IdPracownik} ";
+            string query = $"Update Administrator set Imie='{administrator.Imie}', Nazwisko='{administrator.Nazwisko}', Login='{administrator.Login}', Haslo='{administrator.Haslo}' where IdAdministrator='{IdPracownik}' ";
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.ExecuteNonQuery();
             con.Close();
@@ -63,7 +63,7 @@ namespace ClassLibrary.DAO
         public void Modyfikuj_Trener(Trener trener, int IdPracownik)
         {
             BazaDAO baza = new BazaDAO();
-            string query = "Update Trener set Imie='" + trener.Imie + "', Nazwisko='" + trener.Nazwisko + "', Login='" + trener.Login + "', Hasło='" + trener.Haslo + "'";
+            string query = $"Update Trener set Imie='{trener.Imie}', Nazwisko='{trener.Nazwisko}', Login='{trener.Login}', Haslo='{trener.Haslo}' where IdTrener='{IdPracownik}' ";
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.ExecuteNonQuery();
             con.Close();
@@ -72,7 +72,7 @@ namespace ClassLibrary.DAO
         public void Modyfikuj_Recepcja(Recepcja recepcja, int IdPracownik)
         {
             BazaDAO baza = new BazaDAO();
-            string query = "Update Recepcja set Imie='" + recepcja.Imie + "', Nazwisko='" + recepcja.Nazwisko + "', Login='" + recepcja.Login + "', Hasło='" + recepcja.Haslo + "'";
+            string query = $"Update Recepcja set Imie='{recepcja.Imie}', Nazwisko='{recepcja.Nazwisko}', Login='{recepcja.Login}', Haslo='{recepcja.Haslo}' where IdRecepcja='{IdPracownik}' ";
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.ExecuteNonQuery();
             con.Close();

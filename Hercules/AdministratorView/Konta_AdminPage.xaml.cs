@@ -110,21 +110,26 @@ namespace Hercules
         {
             Metody metody = new Metody();
             BazaDAO baza = new BazaDAO();
+            
+            
             try
             {
                 if (adminRB.IsChecked == true)
                 {
-
+                    var modyfikowanyRekord = modyfikujDG.SelectedItem as Administrator;
+                    metody.Modyfikuj_Administrator(modyfikowanyRekord, modyfikowanyRekord.IdAdministrator);
                     
 
                 }
                 else if (trenerRB.IsChecked == true)
                 {
-                    modyfikujDG.ItemsSource = metody.Pobierz_Wsz_Trenerow();
+                    var modyfikowanyRekord = modyfikujDG.SelectedItem as Trener;
+                    metody.Modyfikuj_Trener(modyfikowanyRekord, modyfikowanyRekord.IdTrener);
                 }
                 else if (recepcjaRB.IsChecked == true)
                 {
-                    modyfikujDG.ItemsSource = metody.Pobierz_Wsz_Recepcja();
+                    var modyfikowanyRekord = modyfikujDG.SelectedItem as Recepcja;
+                    metody.Modyfikuj_Recepcja(modyfikowanyRekord, modyfikowanyRekord.IdRecepcja);
                 }
             }
             catch (Exception)

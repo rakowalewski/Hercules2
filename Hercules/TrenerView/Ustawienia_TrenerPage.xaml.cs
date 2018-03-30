@@ -41,7 +41,7 @@ namespace Hercules.TrenerView
                 imieTB.Text = trener.Imie;
                 nazwiskoTB.Text = trener.Nazwisko;
                 loginTB.Text = trener.Login;
-                hasloTB.Text = trener.Haslo;
+                hasloTB.Password = trener.Haslo;
 
             }
             catch (Exception a)
@@ -59,7 +59,7 @@ namespace Hercules.TrenerView
                 trener.Imie = imieTB.Text;
                 trener.Nazwisko = nazwiskoTB.Text;
                 trener.Login = loginTB.Text;
-                trener.Haslo = hasloTB.Text;
+                trener.Haslo = hasloTB.Password;
                 metody.Modyfikuj_Trener(trener, trener.IdTrener);
             }
             catch (Exception ex)

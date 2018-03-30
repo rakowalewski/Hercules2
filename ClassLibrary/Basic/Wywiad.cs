@@ -9,7 +9,7 @@ namespace ClassLibrary.Basic
     public class Wywiad
     {
         public int IdWywiad { get; set; }
-        public string Pesel { get; set; }
+        public string IdKlient { get; set; }
         public bool WadaSerca { get; set; }
         public bool Nadcisnienie { get; set; }
         public bool ZabRytmSerca { get; set; }

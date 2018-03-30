@@ -32,6 +32,7 @@ namespace Hercules.TrenerView
 
         private void ComboBox_Loaded(object sender, RoutedEventArgs e)
         {
+            trenerTreningCB.Items.Clear();
             try
             {
                 var connectionString = @"Data Source=RAFAL-PC;initial catalog=FITNES;integrated security=True";
@@ -62,7 +63,7 @@ namespace Hercules.TrenerView
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Metody metody = new Metody();
-            string idTrenera;
+            string idTrenera = "";
             try
             {
                 var connectionString = @"Data Source=RAFAL-PC;initial catalog=FITNES;integrated security=True";
@@ -74,8 +75,13 @@ namespace Hercules.TrenerView
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.Add(new SqlParameter("@login", trenerTreningCB.Text));
                     SqlDataReader dataReader = cmd.ExecuteReader();
-                    idTrenera = dataReader["IdTrenera"].ToString();
-                    
+                    while (dataReader.Read())
+                    {
+                        idTrenera = dataReader["IdTrener"].ToString();
+                        
+                    }
+
+
                     con.Close();
                 }
             }
@@ -112,6 +118,7 @@ namespace Hercules.TrenerView
 
         private void ComboBox_Loaded_1(object sender, RoutedEventArgs e)
         {
+            trenerTreningSzukajCB.Items.Clear();
             try
             {
                 var connectionString = @"Data Source=RAFAL-PC;initial catalog=FITNES;integrated security=True";
@@ -127,7 +134,7 @@ namespace Hercules.TrenerView
                     sqlDataAdapter.Fill(dt);
                     foreach (DataRow dr in dt.Rows)
                     {
-                        trenerTreningCB.Items.Add(dr["Login"].ToString());
+                        trenerTreningSzukajCB.Items.Add(dr["Login"].ToString());
                     }
                     con.Close();
                 }
@@ -170,6 +177,11 @@ namespace Hercules.TrenerView
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
             dataTreningDP.IsEnabled = true;
+        }
+
+        private void trenerTreningCBSzukaj_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

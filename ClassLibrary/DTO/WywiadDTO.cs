@@ -21,9 +21,9 @@ namespace ClassLibrary.DTO
             get { return WywiadDAO; }
             set { WywiadDAO = value; }
         }
-        public Wywiad Pobierz_Wywiad(string Pesel)
+        public Wywiad Pobierz_Wywiad(string IdKlient)
         {
-            return wywiadDAO.Pobierz_Wywiad(Pesel);
+            return wywiadDAO.Pobierz_Wywiad(IdKlient);
         }
         public void Zapisz_Wywiad(Wywiad wywiad)
         {
