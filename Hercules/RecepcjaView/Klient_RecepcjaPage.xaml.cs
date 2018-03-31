@@ -104,5 +104,14 @@ namespace Hercules.RecepcjaView
                 throw;
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Metody metody = new Metody();
+            BazaDAO baza = new BazaDAO();
+
+            var modyfikowanyRekord = dgKlient.SelectedItem as Klient;
+            metody.Modyfikuj_Klienta(modyfikowanyRekord, modyfikowanyRekord.Pesel);
+        }
     }
 }

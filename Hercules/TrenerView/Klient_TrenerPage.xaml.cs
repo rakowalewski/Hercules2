@@ -225,5 +225,14 @@ namespace Hercules
             cukrzycaWywiadRB.IsChecked = wywiad.Cukrzyca;
             inneChorobyTB.Text = wywiad.InneChoroby;
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Metody metody = new Metody();
+            BazaDAO baza = new BazaDAO();
+
+            var modyfikowanyRekord = dgKlient.SelectedItem as Klient;
+            metody.Modyfikuj_Klienta(modyfikowanyRekord, modyfikowanyRekord.Pesel);
+        }
     }
 }
