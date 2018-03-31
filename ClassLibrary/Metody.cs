@@ -10,7 +10,7 @@ namespace ClassLibrary
 {
     public class Metody : IMetody
     {
-        //Pola
+        
         private DodajUzytkownikaDTO dodajUzytkownikaDTO;
         private LogowanieDTO logowanieDTO;
         private HarmonogramDTO harmonogramDTO;
@@ -19,7 +19,7 @@ namespace ClassLibrary
         private WywiadDTO wywiadDTO;
         private ZajeciaDTO zajeciaDTO;
 
-        //Konstruktor
+       
         public Metody()
         {
             dodajUzytkownikaDTO = new DodajUzytkownikaDTO();
@@ -31,7 +31,7 @@ namespace ClassLibrary
             zajeciaDTO = new ZajeciaDTO();
         }
 
-        //Właściwości
+        
         public DodajUzytkownikaDTO DodajUzytkownikaDTO { get { return dodajUzytkownikaDTO; } set { dodajUzytkownikaDTO = value; } }
 
         public LogowanieDTO LogowanieDTO { get { return logowanieDTO; } set { logowanieDTO = value; } }
@@ -207,9 +207,6 @@ namespace ClassLibrary
         {
             wywiadDTO.Zapisz_Wywiad(wywiad);
         }
-
-
-       
 
     }
 }

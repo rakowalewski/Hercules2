@@ -9,28 +9,25 @@
     <Grid>
         <!--Definicja wierszy i kolumn-->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="90"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="105"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+
+
         </Grid.RowDefinitions>
 
 
         <!--Definicja elementów Menu-->
-        <Button x:Name="btnKlient" Content="Klient" Grid.Row="0" Margin="5" Click="BtnKlient_Click"/>
-        <Button x:Name="btnTrening" Content="Trening" Grid.Row="1" Margin="5" Click="BtnTrening_Click"/>
-        <Button x:Name="btnHarmonogram" Content="Harmonogram" Grid.Row="2" Margin="5" Click="btnHarmonogram_Click"/>
-        <Button x:Name="btnStatystyki" Content="Statystyki" Grid.Row="3" Margin="5" Click="btnStatystyki_Click"/>
-        <Button x:Name="btnUstawienia" Content="Ustawienia" Grid.Row="4" Margin="5" Click="btnUstawienia_Click"/>
+        <Button x:Name="btnKlient" Content="Klient" Margin="14,10,21,0" Click="BtnKlient_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Height="47" Width="70"/>
+        <Button x:Name="btnTrening"  Content="Trening" Margin="14,94,21,0" Click="BtnTrening_Click" Height="41" Width="70" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Button x:Name="btnHarmonogram" Content="Harmonogram" Margin="10,156,13,0" Click="btnHarmonogram_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Height="35" Width="82"/>
+        <Button x:Name="btnStatystyki" Content="Statystyki" Margin="10,233,19,259" Click="btnStatystyki_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Height="39" Width="76"/>
+        <Button x:Name="btnUstawienia" Content="Ustawienia" Margin="10,299,21,187" Click="btnUstawienia_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Height="45" Width="74"/>
 
-        <Grid Grid.Column="1" Grid.RowSpan="5">
+        <Grid Grid.Column="1">
             <Frame x:Name="TrenerFrame" NavigationUIVisibility="Hidden"/>
         </Grid>
-        
+
     </Grid>
 </Window>

@@ -71,6 +71,7 @@ namespace Hercules.RecepcjaView
                 klient.Pesel = tbxPesel.Text;
                 klient.Adres = tbxAdres.Text;
                 klient.Telefon = tbxTelefon.Text;
+                klient.Email = tbxEmail.Text;
                 if (rbKobieta.IsChecked == true)
                 {
                     klient.Plec = "Kobieta";

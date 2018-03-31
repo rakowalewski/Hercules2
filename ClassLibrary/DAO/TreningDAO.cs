@@ -14,7 +14,7 @@ namespace ClassLibrary.DAO
 
         public void Dodaj_Trening(Trening trening)
         {
-            //Trening trening = new Trening();
+            
             BazaDAO baza = new BazaDAO();
             string query = "Insert into Trening(IdTrener,Pesel,DataGodzRozp,DataGodzZak,CzyZakonczony, Kwota) values(@idtrener,@Pesel,@datagodzrozp,@datagodzzak,@czyzakonczony,@kwota)";
             SqlCommand cmd = new SqlCommand(query, con);

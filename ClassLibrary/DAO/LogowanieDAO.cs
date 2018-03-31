@@ -74,7 +74,14 @@ namespace ClassLibrary.DAO
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.Parameters.Add(new SqlParameter("@login", Login));
             sqlReader = cmd.ExecuteReader();
-            
+            while (sqlReader.Read())
+            {
+                administrator.Imie = sqlReader["Imie"].ToString();
+                administrator.Nazwisko = sqlReader["Nazwisko"].ToString();
+                administrator.Login = sqlReader["Login"].ToString();
+                administrator.Haslo = sqlReader["Haslo"].ToString();
+            }
+
             return administrator;
         }
         public Recepcja Pobierz_Recepcja_Login(string Login)
@@ -85,7 +92,14 @@ namespace ClassLibrary.DAO
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.Parameters.Add(new SqlParameter("@login", Login));
             sqlReader = cmd.ExecuteReader();
-            
+            while (sqlReader.Read())
+            {
+                recepcja.Imie = sqlReader["Imie"].ToString();
+                recepcja.Nazwisko = sqlReader["Nazwisko"].ToString();
+                recepcja.Login = sqlReader["Login"].ToString();
+                recepcja.Haslo = sqlReader["Haslo"].ToString();
+            }
+
             return recepcja;
         }
         public List<Administrator> Pobierz_Wsz_Administrator()
