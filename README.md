@@ -1,1 +1,1 @@
-# PracaInzynierska2
+# Gym Manager -> Prototype
